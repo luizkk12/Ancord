@@ -1,0 +1,27 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Um simples bot para o Discord com o objetivo de ajudar da melhor forma possível.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Hello world!\""
+  },
+  "keywords": [
+    "bot",
+    "discordbot",
+    "discord",
+    "mod",
+    "fun",
+    "economy",
+    "utils"
+  ],
+  "author": "luizkk12",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "quick.db": "^9.1.7",
+    "better-sqlite3": "^11.8.1",
+    "dotenv": "^16.4.7"
+  }
+}
