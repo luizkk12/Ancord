@@ -12,7 +12,7 @@ class Bot {
   }
   
   setup() {
-    this.client.once(Discord.Events.ClientReady, async (bot) => {
+     this.client.once(Discord.Events.ClientReady, async (bot) => {
      await this.loadCommands();	
      await this.loadSlashCommands();
    
