@@ -12,22 +12,22 @@ class Bot {
   }
   
   setup() {
-     this.client.once(Discord.Events.ClientReady, async (bot) => {
-     await this.loadCommands();	
-     await this.loadSlashCommands();
+    this.client.once(Discord.Events.ClientReady, async (bot) => {
+      await this.loadCommands();	
+      await this.loadSlashCommands();
    
-     console.log(`[✅ BOT ONLINE] Estou online!\n[😎 ATIVO] Estou em ${bot.guilds.cache.size} servidores!\n[🙂 DISPOSTO] Estou ajudando ${bot.users.cache.filter(user => !user.bot).size} usuários.`);
+      console.log(`[✅ BOT ONLINE] Estou online!\n[😎 ATIVO] Estou em ${bot.guilds.cache.size} servidores!\n[🙂 DISPOSTO] Estou ajudando ${bot.users.cache.filter(user => !user.bot).size} usuários.`);
      
-     let index = 0;
-     let activities = [
-       `😎 Estou em ${bot.guilds.cache.size} servidores!`,
-       `😆 Estou ajudando ${bot.users.cache.filter(user => !user.bot).size} usuários!`,
-       `💻 Sabia que eu sou programado em Node.js, usando a biblioteca discord.js?`
-     ];
+      let index = 0;
+      let activities = [
+        `😎 Estou em ${bot.guilds.cache.size} servidores!`,
+        `😆 Estou ajudando ${bot.users.cache.filter(user => !user.bot).size} usuários!`,
+        `💻 Sabia que eu sou programado em Node.js, usando a biblioteca discord.js?`
+      ];
      
-     setInterval(() => {
-       bot.user.setActivity(activities[index], { type: Discord.ActivityType.Playing });
-       index = (index + 1) % activities.length;  
+      setInterval(() => {
+        bot.user.setActivity(activities[index], { type: Discord.ActivityType.Playing });
+        index = (index + 1) % activities.length;  
       }, 15_000);
     });
   }
