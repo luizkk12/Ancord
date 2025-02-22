@@ -38,19 +38,11 @@ module.exports = {
     
     collector.on('collect', async (i) => {
       if (i.customId === 'at') {
-        if (i.user.id !== message.author.id) {
-          let msg = `Eu sei que é chato, mas use você mesmo um comando \`${prefix}ping\` para usar os botões.`;
-
-          if (i.replied) {
-            await i.followUp({ content: msg, flags: Discord.MessageFlags.Ephemeral });
-          } else {
-            await i.reply({ content: msg, flags: Discord.MessageFlags.Ephemeral });
-          }
+        if (i.user.id !== message.author.id) {   
+          await i.reply({ content: `É chato, mas para evitar erros, você mesmo execute um comando \`${prefix}ping\`.`, flags: Discord.MessageFlags.Ephemeral });
         } else {
           await i.deferUpdate();
-
           index = index + 1;
-          ping = message.client.ws.ping;
           
           let embed = new Discord.EmbedBuilder()
           .setTitle(`**🏓 | Pong!**`)
